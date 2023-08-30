@@ -65,15 +65,15 @@ build out any helper methods if needed.
 
 - `Game create()`
   - Creates a Game in the database with the instance's attributes
-- `Game get_by_id(id)`
+- `Game classmethod query_all()`
+  - Returns a list of Game instances based on rows in the database
+  - The return value ought to be a list of Game instances
+- `Game query_by_id(id)`
   - Returns a game instance with the id that was passed as an argument
   - If no game exists with that id, returns None
 - `Game delete()`
   - Deletes the Game from the database
   - No return value is necessary for this method
-- `Game classmethod query_all()`
-  - Returns a list of Game instances based on rows in the database
-  - The return value ought to be a list of Game instances
 
 ### Association Propertiesc2
 
