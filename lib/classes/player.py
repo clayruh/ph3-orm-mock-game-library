@@ -18,3 +18,8 @@ class Player:
         """
 
         CURSOR.execute(sql)
+
+    @classmethod
+    def query_all(cls):
+        rows = CURSOR.execute("SELECT * FROM players").fetchall()
+        return [ Player(r[1], r[0]) for r in rows ]
