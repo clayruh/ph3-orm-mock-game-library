@@ -65,11 +65,9 @@ build out any helper methods if needed.
 
 - `Game create()`
   - Creates a Game in the database with the instance's attributes
-- `Game update()`
-  - Updates a Game in the database based on the instance's attributes
-- `Game save()`
-  - Will either create or update the Game in the database depending on whether
-  the Game has an id
+- `Game get_by_id(id)`
+  - Returns a game instance with the id that was passed as an argument
+  - If no game exists with that id, returns None
 - `Game delete()`
   - Deletes the Game from the database
   - No return value is necessary for this method
@@ -90,6 +88,11 @@ build out any helper methods if needed.
 
 ### BONUS Methods
 
+- `Game update()`
+  - Updates a Game in the database based on the instance's attributes
+- `Game save()`
+  - Will either create or update the Game in the database depending on whether
+  the Game has an id
 - `Game classmethod all_time_favorite()`
   - Returns the Game with the most hours_played as an instance
 - `Player favorite_game()`
