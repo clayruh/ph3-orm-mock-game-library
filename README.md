@@ -1,8 +1,8 @@
-# Phase 3 ORM Challenge - NAME GOES HERE
+# Phase 3 ORM Mock Challenge - Game Library
 
-For this mock challenge, we'll be working with a domain for a c2.
+For this mock challenge, we'll be working with a domain for a gaming library.
 
-We have two models: `C1` which shows the c1s who belong to a `C2`.
+We have two models: `Game` which shows the games that belong to a `Player`.
 
 ## Topics
 
@@ -17,11 +17,10 @@ We have two models: `C1` which shows the c1s who belong to a `C2`.
 
 To get started, run `pipenv install` while inside of this directory.
 
-Only one of the tables, `c2s` has been created so far. Additionally the `C2`
-class already has its required functionality and you won't have to build
-additional methods for it.
+Only one of the tables, `players` has been created so far. Additionally the `Player` class already has its required functionality and you won't have to
+build additional methods for it.
 
-Build out all of the methods listed in the deliverables for `C1`. The methods are listed
+Build out all of the methods listed in the deliverables for `Game`. The methods are listed
 in a suggested order, but you can feel free to tackle the ones you think are
 easiest. Be careful: some of the later methods rely on earlier ones.
 
@@ -48,51 +47,50 @@ build out any helper methods if needed.
 
 ### Initializers and Properties
 
-- `C1 classmethod create_table()`
-  - Creates an `c1s` table with these columns: id (INTEGER), field_one (TEXT),
-  field_two (INTEGER), c2_id (INTEGER)
-- `C1 __init__(field_one, field_two, c2_id, id=None)`
-  - `C1` is initialized with a field_one (string) and an field_two (integer)
-  - When initialized an C1 should have an id of None
-  - Assume that C1s will always be initialized with the proper data types
-- `C1 __repr__()`
-  - Returns the C1 instance in the format below:
-  - `C1(id={id} field_one={field_one}, field_two={field_two}, c2_id={c2_id})`
-- `C1 property field_two()`
-  - Returns the `C1`'s field_two
-  - The field_two must be an integer ADD CONSTRAINTS
+- `Game classmethod create_table()`
+  - Creates a `games` table with these columns: id (INTEGER), name (TEXT),
+  hours_played (INTEGER), player_id (INTEGER)
+- `Game __init__(name, hours_played, player_id, id=None)`
+  - `Game` is initialized with a name (string) and hours_played (integer)
+  - When initialized a Game should have an id of None
+  - Assume that Games will always be initialized with the proper data types
+- `Game __repr__()`
+  - Returns the Game instance in the format below:
+  - `Game(id={id} name={name}, hours_played={hours_played}, player_id={player_id})`
+- `Game property hours_played()`
+  - Returns the `Game`'s hours_played
+  - The hours_played must be an integer greater than 0
 
 ### SQL Methods
 
-- `C1 create()`
-  - Creates a C1 in the database with the instance's attributes
-- `C1 update()`
-  - Updates a C1 in the database based on the instance's attributes
-- `C1 save()`
-  - Will either create or update the C1 in the database depending on whether the C1 has an id
-- `C1 delete()`
-  - Deletes the C1 from the database
+- `Game create()`
+  - Creates a Game in the database with the instance's attributes
+- `Game update()`
+  - Updates a Game in the database based on the instance's attributes
+- `Game save()`
+  - Will either create or update the Game in the database depending on whether
+  the Game has an id
+- `Game delete()`
+  - Deletes the Game from the database
   - No return value is necessary for this method
-- `C1 classmethod query_all()`
-  - Returns a list of C1 instances based on rows in the database
-  - The return value ought to be a list of C1 instances
+- `Game classmethod query_all()`
+  - Returns a list of Game instances based on rows in the database
+  - The return value ought to be a list of Game instances
 
 ### Association Properties
 
-- `C1 property c2()`
-  - Returns the C2 that the C1 is associated with as an instance
-  - If the C1 is not associated with a C2 returns `None`
-  - When setting the c2, if the argument is a `C2` instance it associates the
-  C1 with the c2
-  - The database is already seeded with a pair of c2s for testing purposes
-    - C2(id=1, name=???)
-    - C2(id=2, name=???)
+- `Game property player()`
+  - Returns the Player that the Game is associated with as an instance
+  - If the Game is not associated with a Player returns `None`
+  - When setting the player, if the argument is a `Player` instance it
+  associates the Game with the player
+  - The database is already seeded with a pair of players for testing purposes
+    - Player(id=1, name="Justin Muzzi")
+    - Player(id=2, name="Brandon Collins")
 
 TODO: Seed database
 
 ### BONUS Methods
 
-- `C1 classmethod query_max_or_min()`
-  - Returns the max C1 by field_two from the database as an instance
-- `C1 classmethod average()`
-  - Returns the average field_two of c1s in the database
+- `Game classmethod least_played()`
+  - Returns the Game with the fewest hours_played as an instance
