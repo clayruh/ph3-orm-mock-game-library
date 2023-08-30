@@ -75,7 +75,7 @@ build out any helper methods if needed.
   - Deletes the Game from the database
   - No return value is necessary for this method
 
-### Association Propertiesc2
+### Association Properties
 
 - `Game property player()`
   - Returns the Player that the Game is associated with as an instance
