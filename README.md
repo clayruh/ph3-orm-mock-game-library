@@ -77,7 +77,7 @@ build out any helper methods if needed.
   - Returns a list of Game instances based on rows in the database
   - The return value ought to be a list of Game instances
 
-### Association Properties
+### Association Propertiesc2
 
 - `Game property player()`
   - Returns the Player that the Game is associated with as an instance
@@ -88,9 +88,12 @@ build out any helper methods if needed.
     - Player(id=1, name="Justin Muzzi")
     - Player(id=2, name="Brandon Collins")
 
-TODO: Seed database
-
 ### BONUS Methods
 
-- `Game classmethod least_played()`
-  - Returns the Game with the fewest hours_played as an instance
+- `Game classmethod all_time_favorite()`
+  - Returns the Game with the most hours_played as an instance
+- `Player favorite_game()`
+  - Returns the Game that a player has played the most (highest hours played)
+  for that player
+- `Game classmethod average_playtime()`
+  - Returns the average hours_played across all games
