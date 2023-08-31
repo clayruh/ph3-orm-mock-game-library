@@ -23,3 +23,7 @@ class Player:
     def query_all(cls):
         rows = CURSOR.execute("SELECT * FROM players").fetchall()
         return [ Player(r[1], r[0]) for r in rows ]
+    
+    def favorite_game(self):
+        #returns the game that a player has played the most (highest hours played)
+        pass
